@@ -30,7 +30,7 @@ const username = ref('')
 const password = ref('')
 
 const logUserIn = async () => {
-    if (route.query.redirect) {
+    if (await login(username.value, password.value)) {
         if (route.query.redirect) {
             router.push(route.query.redirect)
         } else {
